@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Link game</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css"/>
+    </head>
+
+    <body>
+        <div class="container">
+            <nav class="col navbar navbar-expand-lg navbar-dark bg-primary">
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Generator</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Linkgame</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="container mt-4 mb-4">
+            <div class="row">
+                <div class="col">
+                    <h1 class="text-center">Link game</h1>
+                    <a href="index.html">Generate your own vocsheet</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="file-selector">
+                          <label class="custom-file-label" for="file-selector">Load a custom vocsheet</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="alert alert-info" role="alert">
+                        <strong>Link the terms to their definitions</strong> by dragging the texts to the correct ones!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <svg width="1920" height="1080" class="line-area" id="line-area">
+            <line id="draggable-link" stroke="#2654ff" style="visibility: hidden"/>
+        </svg>
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <ul id="terms">
+                        <li ans="r1">Element 1 <span class="selectable right dot"></span></li>
+                        <li ans="r2">Element 2<span class="selectable right dot"></span></li>
+                        <li ans="r3">Element 3<span class="selectable right dot"></span></li>
+                        <li ans="r4">Element 4<span class="selectable right dot"></span></li>
+                    </ul>
+                </div>
+                <div class="col-2">
+                    
+                </div>
+                <div class="col">
+                    <ul id="definitions">
+                        <li id="r1"><span class="selectable left dot mr"></span>Answer 1</li>
+                        <li id="r2"><span class="selectable left dot mr"></span>Answer 2</li>
+                        <li id="r3"><span class="selectable left dot mr"></span>Answer 3</li>
+                        <li id="r4"><span class="selectable left dot mr"></span>Answer 4</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col">
+                    <button class="btn btn-primary btn-lg btn-block" onclick="checkAnswers()">Verify</button>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col btn-group">
+                    
+                    <button class="btn btn-secondary btn-lg" id="reset-and-shuffle-button"">Reset and shuffle</button>
+                    <button class="btn btn-outline-secondary btn-lg" id="reset-button">Reset</button>
+                    <button class="btn btn-outline-secondary btn-lg" id="shuffle-button">Shuffle</button>
+                    
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="container mt-2">
+            <div class="row">
+                <div class="col">
+                    <div id="alert" class="alert" role="alert" style="display:none;">
+                        <span id="score"></span>
+                        <button id="get-answers-button" class="btn btn-outline-dark ml-4">Check correct answers</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script src="js/crypt.js"></script>
+    <script src="js/relier.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</html>

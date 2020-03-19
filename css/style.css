@@ -1,0 +1,64 @@
+.linked {
+    opacity: 0.7;
+}
+
+.manipulated {
+    border-color: #2654ff !important;
+}
+
+.manipulated .selectable {
+    background-color: #2654ff !important;
+}
+
+#terms > li, #definitions > li {
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 5px 0px;
+}
+
+#terms > li:hover, #definitions > li:hover {
+    border-color: #2654ff;
+}
+
+#terms, #definitions {
+    list-style: none;
+    user-select: none;
+    padding-left: 0px;
+}
+
+
+
+.line-area {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.dot {
+    margin-top: 4px;
+    height: 16px;
+    width: 16px;
+    background-color: #333;
+    border-radius: 100%;
+    display: inline-block;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.mr {
+    margin-right: 6px
+}
+
+#terms > li:hover .selectable, #definitions > li:hover .selectable {
+    cursor: pointer;
+    background-color: #2654ff;
+}
+

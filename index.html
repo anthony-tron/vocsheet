@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Generate a vocsheet</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="css/style.css"/>
+    </head>
+
+    <body>
+        <div class="container">
+            <nav class="col navbar navbar-expand-lg navbar-dark bg-primary">
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Generator</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="linkgame.html">Link game</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        
+
+        <div class="container mt-4 mb-4">
+            <div class="row">
+                <div class="col">
+                    <h1 class="text-center">Generate your own vocsheet</h1>
+                    <a href="linkgame.html">Test your vocsheet with a link game!</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mb-3">
+            <div class="row">
+                <div class="col">
+                    <div class="input-group mb-2">
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="file-selector">
+                          <label class="custom-file-label" for="file-selector">Load an existing vocsheet</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col input-group">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-secondary" type="button" id="load-url-button">Load from URL</button>
+                    </div>
+                    <input type="text" class="form-control" placeholder="" id="url-to-load"/">
+                </div>
+            </div>
+        </div>
+
+        <!--Settings-->
+        <div class="container mb-3">
+            <div class="row">
+                <div class="col">
+                    <h2>Settings</h2>
+                </div>
+            </div>
+
+            <div class="row mb-1">
+                <div class="col input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input id="encrypt-checkbox" type="checkbox"/>
+                        </div>
+                    </div>
+                    <label for="encrypt-checkbox" class="form-control">Encrypt</p>
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                        <input id="shuffle-terms-checkbox" type="checkbox"/>
+                        </div>
+                    </div>
+                    <label for="shuffle-terms-checkbox" class="form-control">Shuffle terms</p>
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                        <input id="shuffle-definitions-checkbox" type="checkbox"/>
+                        </div>
+                    </div>
+                    <label for="shuffle-definitions-checkbox" class="form-control">Shuffle definitions</p>
+                </div>
+            </div>
+        </div>
+
+        <!--Terms and definitions-->
+        <div class="container mb-3">
+            <div class="row">
+                <div class="col">
+                    <h2>Terms and definitions</h2>
+                </div>
+            </div>
+            <div class="extendable" id="entries">
+                <div class="row">
+                    <div class="col input-group">
+                        <input placeholder="term" onchange="addRow(this)" type="text" class="form-control"/>
+                        <input placeholder="definition" type="text" class="form-control"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mb-2">
+            <div class="row mb-2">
+                <div class="col">
+                    <button class="btn btn-primary btn-lg btn-block" onclick="createURL()">Create URL</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-primary" type="button" onclick="copyToClipboard('linkgame-url')">Copy link game</button>
+                    </div>
+                    <input type="text" class="form-control" placeholder="" id="linkgame-url"/">
+                  </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-primary btn-lg btn-block" onclick="exportToFile()">Export and download</button>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script src="js/generator.js"></script>
+    <script src="js/crypt.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</html>
