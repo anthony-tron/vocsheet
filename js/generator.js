@@ -89,7 +89,7 @@ function download(filename, content) {
 }
 
 function createURL() {
-    urlHolders.linkGame.value = encodeURI(baseURL + 'vocsheet/linkgame.html?' + generateLines().join('|'))
+    urlHolders.linkGame.value = encodeURI(baseURL + '/vocsheet/linkgame.html?' + generateLines().join('|'))
 }
 
 function loadDataFromFile(event) {
@@ -165,7 +165,7 @@ function updateHTML(elements, settings) {
 }
 
 
-let baseURL = 'http://nicolasduflot.com/anthony/'
+let baseURL = 'https://anthony-tron.github.io'
 
 let entriesArea = document.getElementById('entries')
 let checkboxes = [
