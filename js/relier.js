@@ -71,7 +71,7 @@ function countSameLinks(array1, array2) {
 
 function handleDraggableLink(event) {
     draggableLink.style.visibility = 'visible'
-    updateDraggableLink(linkingPoint(origin, Position.RIGHT), {x: event.clientX, y: event.clientY})
+    updateDraggableLink(linkingPoint(dragOrigin, Position.RIGHT), {x: event.clientX, y: event.clientY})
 }
 
 function updateDraggableLink(leftCoords, rightCoords) {
@@ -142,7 +142,7 @@ function generate(elements, options) {
 function setup() {
     links = []
     correctLinks = []
-    origin = undefined
+    dragOrigin = undefined
     
     selectedTerm = undefined
     selectedDefinition = undefined
@@ -153,7 +153,7 @@ function setup() {
         term.addEventListener('mousedown', function() {
             selectedTerm = closeTerm
     
-            origin = closeTerm
+            dragOrigin = closeTerm
             closeTerm.classList.add('manipulated')
             window.addEventListener('mousemove', handleDraggableLink)
         })
@@ -300,7 +300,7 @@ let resetButton = document.getElementById('reset-button')
 let shuffleButton = document.getElementById('shuffle-button')
 
 let draggableLink = document.getElementById('draggable-link')
-let origin = undefined
+let dragOrigin = undefined
 
 let selectedTerm = undefined
 let selectedDefinition = undefined
