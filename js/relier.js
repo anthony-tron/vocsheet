@@ -3,7 +3,7 @@ const Position = {
     RIGHT: 'right'
 }
 
-function linkingPoint(htmlElement, position) {
+/*function linkingPoint(htmlElement, position) {
     if (!htmlElement.getBoundingClientRect) return
 
     let rect = htmlElement.getBoundingClientRect()
@@ -14,6 +14,22 @@ function linkingPoint(htmlElement, position) {
 
     if (position == Position.LEFT)          coords.x = rect.x + 16
     else if (position == Position.RIGHT)    coords.x = rect.x + rect.width - 16
+    else return
+
+    return coords
+}*/
+
+function linkingPoint(htmlElement, position) {
+    if (!htmlElement.getBoundingClientRect) return
+
+    let rect = htmlElement.getBoundingClientRect()
+    let coords = {}
+
+
+    coords.y = rect.top + rect.height / 2
+
+    if (position == Position.LEFT)          coords.x = rect.left + 16
+    else if (position == Position.RIGHT)    coords.x = rect.right - 16
     else return
 
     return coords

@@ -23,10 +23,13 @@
 
 #terms, #definitions {
     list-style: none;
-    user-select: none;
     padding-left: 0px;
-}
 
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
 
 
 .line-area {
